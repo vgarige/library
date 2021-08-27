@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                git credentialsId: 'spring-git-credential', url: 'https://github.com/vgarige/'
+                git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
             }
         } 
         stage('Building Project from branch'){
