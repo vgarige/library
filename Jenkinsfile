@@ -6,7 +6,7 @@ pipeline{
                 git credentialsId: 'spring-git-credential', url: 'https://github.com/vgarige/'
             }
         } 
-        stage('Building Project'){
+        stage('Building Project from branch'){
             steps{
                 sh 'echo Project is building'
             }
