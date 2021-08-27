@@ -11,6 +11,13 @@ pipeline{
                 sh 'echo Project is building'
             }
         } 
+        stage('Building Project From New branch'){
+            steps{
+                sh 'echo Project is building'
+            }
+        }
+
+
 
     }
 }
