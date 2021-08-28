@@ -1,8 +1,9 @@
 pipeline {
   environment {
-    imagename = "mg00513682/library"
-    registryCredential = '5cee079a-5199-4b99-9cbb-ab50a93698f7'
     dockerImage = ''
+    registry = 'mg00513682/library'
+    registryCredential = '5cee079a-5199-4b99-9cbb-ab50a93698f7'
+    
   }
   agent any
   stages{
@@ -14,7 +15,7 @@ pipeline {
     stage('Building image') {
       steps{  
         script {
-          dockerImage = docker.build ${BRANCH_NAME}
+          dockerImage = docker.build registry + : + ${BRANCH_NAME}
         }
       }  
     }
