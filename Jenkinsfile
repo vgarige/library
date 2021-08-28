@@ -8,7 +8,7 @@ pipeline {
   stages{
     stage('Cloning Git Repo') {
       steps {
-        git branch: 'app-release-v3.1.0.0', credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library'
+        checkout([$class: 'GitSCM', branches: [[name: 'app-release-v3.1.0.0']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library']]])
       }
     }
     stage('Building image') {
