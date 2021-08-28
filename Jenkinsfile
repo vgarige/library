@@ -8,7 +8,7 @@ pipeline{
         } 
         stage('Building Project from SRE1156 testing 2222'){
             steps{
-                sh 'echo Project is building'
+                sh 'echo Project is building ${BRANCH_NAME}'
             }
         } 
 
