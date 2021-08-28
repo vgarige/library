@@ -5,8 +5,8 @@ pipeline {
     dockerImage = ''
   }
   agent any
-  stages {
-    stage('Cloning Git') {
+  stages{
+    stage('Cloning Git Repo') {
       steps {
         git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
       }
