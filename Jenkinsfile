@@ -9,32 +9,6 @@ pipeline {
     stage('Cloning Git') {
       steps {
         git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
-
-      }
-    }
-    stage('Building image') {
-      steps{
-        script {
-          dockerImage = docker.build + ${BRANCH_NAME}
-        }
-      }
-    }
-    stage('Deploy Image') {
-      steps{
-        script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("$BRANCH_NAME")
-             dockerImage.push("$BRANCH_NAME")
-
-          }
-        }
-      }
-    }
-    stage('Remove Unused docker image') {
-      steps{
-        sh 'docker rmi "$imagename:$BRANCH_NAME"'
-         sh 'docker rmi "$imagename:$BRANCH_NAME"'
-
       }
     }
   }
