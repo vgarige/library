@@ -14,7 +14,9 @@ pipeline {
     
     stage('Building Docker Image'){
       steps{
-        sh 'docker build -t mg00513682/library:app-release-v3.1.0.0 .'
+        script{
+          docker.build registry + ":$BUILD_NUMBER"
+        }  
       }
     }
   } 
