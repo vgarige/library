@@ -30,7 +30,7 @@ pipeline {
 
               script { 
 
-                  dockerImage = docker.build registry + ":${BRANCH_NAME}" 
+                  dockerImage = "docker.build registry + :${BRANCH_NAME}" 
 
               }
 
@@ -60,7 +60,7 @@ pipeline {
 
           steps { 
 
-              sh "docker rmi $registry:${BRANCH_NAME}" 
+              sh 'docker rmi "$registry:${BRANCH_NAME}"'
 
           }
 
