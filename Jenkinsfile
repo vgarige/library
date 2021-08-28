@@ -3,8 +3,7 @@ pipeline {
     dockerImage = ''
     registry = "mg00513682/library:${BRANCH_NAME}"
     registryCredential = '5cee079a-5199-4b99-9cbb-ab50a93698f7'
-    
-  }
+    }
   agent any
   stages{
     stage('Cloning Git Repo') {
