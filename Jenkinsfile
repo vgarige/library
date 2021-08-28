@@ -1,7 +1,7 @@
 pipeline {
   environment {
     dockerImage =''
-    registry = "mg00513682/library"
+    registry = 'mg00513682/library'
   }
   agent any
   stages{
