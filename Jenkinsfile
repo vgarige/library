@@ -12,9 +12,7 @@ pipeline {
     }
     stage('Building Dcoker Image') {
       steps{
-        script{
-          dockerImage = docker.build registry
-        }
+        sh 'docker build -t app-release-v3-1.0.0 .'
       }
     }
   } 
