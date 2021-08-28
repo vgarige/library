@@ -6,9 +6,9 @@ pipeline{
                 git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
             }
         } 
-        stage("Building Project Master Mallesh ${BRANCH_NAME}.${TAG_NAME}"){
+        stage('Building Project Master Mallesh ${BRANCH_NAME}.${TAG_NAME}'){
             steps{
-                sh 'echo Project is building'
+                sh 'echo Project is building' +  ${BRANCH_NAME}.${TAG_NAME}
             }
         } 
 
