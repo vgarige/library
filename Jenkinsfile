@@ -24,7 +24,7 @@ pipeline {
 
       } 
 
-      stage('Building Image for "${BRANCH_NAME}"') { 
+      stage('Building Image for SRE-Release-v2-1.0.2') { 
 
           steps { 
 
