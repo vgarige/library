@@ -14,10 +14,7 @@ pipeline {
     
     stage('Building Docker Image'){
       steps{
-        script{
-          dockerImage = docker.build registry 
-        
-        }
+        sh 'docker build -t mg00513682/library:app-release-v3.1.0.0 .'
       }
     }
   } 
