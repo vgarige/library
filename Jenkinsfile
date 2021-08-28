@@ -1,6 +1,6 @@
 node {
     def app
-    stages{	
+    
     	stage('Clone repository'){
 		steps {
 			git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
@@ -20,5 +20,5 @@ node {
 			}
 		}
        }
-    }
+    
 }
