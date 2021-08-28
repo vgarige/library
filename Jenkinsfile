@@ -11,5 +11,15 @@ pipeline {
         git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
       }
     }
+    stage('Building image') {
+        script {
+          dockerImage = docker.build imagename
+        }
+    }
+    
+    
+    
+    
+    
   }
 }
