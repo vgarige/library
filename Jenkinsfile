@@ -2,7 +2,7 @@ node {
     def app
 
     stage('Clone repository'){
-		stps {
+		steps {
 			git credentialsId: 'git-hub-cred', url: 'https://github.com/vgarige/library.git'
 		}
     }
